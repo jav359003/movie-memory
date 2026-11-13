@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0b0e11;
+  --foreground: #f4f5f5;
+  --muted: #9aa1a7;
+  --muted-light: #bbc1c5;
+  --panel: #151a1f;
+  --border: #293038;
+  --border-strong: #404952;
+  --surface-hover: #1d2329;
+  --skeleton: #252c33;
+  --accent: #00c46a;
+  --accent-strong: #19d77d;
+  --fact-accent: #e18a50;
+  --danger: #ff9a98;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  --font-mono: "SFMono-Regular", Consolas, monospace;
+}
+
+body {
+  min-width: 320px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: "Avenir Next", Avenir, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:not(:disabled) {
+  cursor: pointer;
+}
+
+:where(a, button, input):focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 34%, transparent);
+  color: white;
+}
+
+* {
+  scrollbar-color: var(--border-strong) var(--background);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
